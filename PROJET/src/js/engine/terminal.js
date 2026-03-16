@@ -32,21 +32,18 @@ function runCommand(level, state, command) {
 
     if (!value) return "";
 
-    // help
 
     if (value === "help") {
         return "ls, ls -a, pwd, cd, cat, sudo -l, sudo cat, clear";
     }
 
 
-    // pwd
 
     if (value === "pwd") {
         return state.path;
     }
 
 
-    // ls
 
     if (value === "ls") {
 
@@ -58,7 +55,6 @@ function runCommand(level, state, command) {
     }
 
 
-    // ls -a
 
     if (value === "ls -a") {
 
@@ -68,14 +64,11 @@ function runCommand(level, state, command) {
     }
 
 
-    // clear
-
     if (value === "clear") {
         return "__CLEAR__";
     }
 
 
-    // sudo -l
 
     if (value === "sudo -l") {
 
@@ -87,8 +80,6 @@ function runCommand(level, state, command) {
         );
     }
 
-
-    // cd
 
     if (value.startsWith("cd ")) {
 
@@ -111,7 +102,6 @@ function runCommand(level, state, command) {
     }
 
 
-    // sudo cat
 
     if (value.startsWith("sudo cat ")) {
 
@@ -128,8 +118,6 @@ function runCommand(level, state, command) {
         return level.files[filePath] || "cat: No such file";
     }
 
-
-    // cat
 
     if (value.startsWith("cat ")) {
 
