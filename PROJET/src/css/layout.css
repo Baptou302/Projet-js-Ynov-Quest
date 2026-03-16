@@ -1,0 +1,38 @@
+#app {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+.screen {
+    width: min(950px, 100%);
+    background: #1f2937;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+}
+
+.center {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.stack {
+    display: grid;
+    gap: 16px;
+}
+
+.world-list,
+.level-list {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
