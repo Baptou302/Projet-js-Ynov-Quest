@@ -1,6 +1,4 @@
-function normalize(value) {
-    return value.trim().toLowerCase().replace(/\s+/g, " ");
-}
+const normalize = v => v.trim().toLowerCase().replace(/\s+/g, " ");
 
 function enableQcmPick() {
     document.querySelectorAll("[data-answer]").forEach(btn => {
