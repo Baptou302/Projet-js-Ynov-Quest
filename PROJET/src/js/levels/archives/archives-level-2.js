@@ -4,7 +4,7 @@ export default {
     worldName: "Les Archives Perdues",
     title: "Sous-dossier caché",
     intro: "Le flag n'est plus dans le dossier courant. Il faut se déplacer.",
-    courseKey: "navigation",
+    course: { title: "Rappel Navigation", points: ["cd nom entre dans un dossier", "cd .. remonte d'un dossier", "pwd affiche le chemin actuel"] },
     type: "terminal",
     question: "Trouve le bon dossier, lis le flag, puis valide-le.",
     startPath: "/home/player",

@@ -7,7 +7,7 @@ export default {
 
     intro: "Le flag est caché dans un dossier invisible. Certaines commandes peuvent afficher les fichiers cachés.",
 
-    courseKey: "navigation",
+    course: { title: "Rappel Navigation", points: ["cd nom entre dans un dossier", "cd .. remonte d'un dossier", "pwd affiche le chemin actuel"] },
 
     type: "terminal",
 

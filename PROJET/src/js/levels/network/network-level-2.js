@@ -4,7 +4,7 @@ export default {
     worldName: "La Zone Réseau",
     title: "Masque réseau",
     intro: "Tu configures un petit réseau local classique en /24.",
-    courseKey: "config",
+    course: { title: "Configuration", points: ["ifconfig affiche la config réseau", "ip addr sur les systèmes modernes", "hostname -I affiche l'IP"] },
     type: "text",
     question: "Quel masque correspond à un réseau /24 ?",
     answer: "255.255.255.0",

@@ -4,7 +4,7 @@ export default {
     worldName: "La Base Centrale",
     title: "Créer une table users",
     intro: "Le client veut une table users avec id, nom et email.",
-    courseKey: "create",
+    course: { title: "Création de base", points: ["CREATE DATABASE crée une base", "SHOW DATABASES liste les bases", "USE sélectionne une base"] },
     type: "qcm",
     question: "Choisis la bonne requête.",
     options: [

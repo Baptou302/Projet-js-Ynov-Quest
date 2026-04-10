@@ -4,7 +4,7 @@ export default {
     worldName: "Les Archives Perdues",
     title: "Premier terminal",
     intro: "Explore le terminal, trouve le flag puis entre-le dans le champ de validation.",
-    courseKey: "files",
+    course: { title: "Rappel Terminal", points: ["ls affiche le contenu du dossier courant", "cat lit un fichier texte"] },
     type: "terminal",
     question: "Lis le fichier flag.txt pour récupérer le flag.",
     startPath: "/home/player",

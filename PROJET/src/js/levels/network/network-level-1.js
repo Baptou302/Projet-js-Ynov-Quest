@@ -4,7 +4,7 @@ export default {
     worldName: "La Zone Réseau",
     title: "Identifier une IP valide",
     intro: "Une machine du labo doit recevoir une adresse du réseau 192.168.1.0/24.",
-    courseKey: "basics",
+    course: { title: "Rappel Réseau", points: ["Une IP valide un adresse unique", "192.168.1.0/24 signifie 192.168.1.x", "/24 = 256 adresses possibles"] },
     type: "text",
     question: "Donne une IP valide possible pour cette machine.",
     answer: "192.168.1.10",

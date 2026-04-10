@@ -1,8 +1,1 @@
-const state = {
-    screen: "home",
-    world: null,
-    levelIndex: 0,
-    result: null
-};
-
-export default state;
+export default { screen: "home", world: null, levelIndex: 0, result: null, user: null };

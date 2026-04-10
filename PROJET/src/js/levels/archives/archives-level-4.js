@@ -4,7 +4,7 @@ export default {
     worldName: "Les Archives Perdues",
     title: "Terminal final",
     intro: "Aucune aide ne sera donnée.",
-    courseKey: "navigation",
+    course: { title: "Rappel Navigation", points: ["cd nom entre dans un dossier", "cd .. remonte d'un dossier", "pwd affiche le chemin actuel"] },
     type: "terminal",
     question: "Récupère le flag.",
     startPath: "/home/player",

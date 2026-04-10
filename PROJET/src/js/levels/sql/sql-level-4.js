@@ -4,7 +4,7 @@ export default {
     worldName: "La Base Centrale",
     title: "Filtrer les résultats",
     intro: "Le client veut afficher seulement les utilisateurs du service reseau.",
-    courseKey: "data",
+    course: { title: "Manipulation de données", points: ["INSERT ajoute des lignes", "SELECT récupère les données", "WHERE filtre les résultats"] },
     type: "text",
     question: "Quelle requête SELECT avec WHERE peux-tu écrire ?",
     answer: "select * from users where service = 'reseau';",

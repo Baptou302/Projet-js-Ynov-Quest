@@ -4,7 +4,7 @@ export default {
     worldName: "La Base Centrale",
     title: "Créer la base",
     intro: "Le client veut une base de données nommée entreprise.",
-    courseKey: "create",
+    course: { title: "Création de base", points: ["CREATE DATABASE crée une base", "SHOW DATABASES liste les bases", "USE sélectionne une base"] },
     type: "text",
     question: "Quelle commande SQL permet de créer cette base ?",
     answer: "create database entreprise;",

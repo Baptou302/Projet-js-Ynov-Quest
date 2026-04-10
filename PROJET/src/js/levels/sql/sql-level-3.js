@@ -4,7 +4,7 @@ export default {
     worldName: "La Base Centrale",
     title: "Ajouter des données",
     intro: "La table users existe déjà. Il faut ajouter un utilisateur.",
-    courseKey: "data",
+    course: { title: "Manipulation de données", points: ["INSERT ajoute des lignes", "SELECT récupère les données", "WHERE filtre les résultats"] },
     type: "text",
     question: "Écris une requête valide pour insérer Alice avec l'id 1.",
     answer: "insert into users values (1, 'alice');",
