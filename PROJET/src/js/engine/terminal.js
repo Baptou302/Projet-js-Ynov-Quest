@@ -59,9 +59,11 @@ function initTerminal(level) {
         if (result === '__CLEAR__') history.innerHTML = '';
         else if (result) printLine(history, result);
         input.value = '';
+        input.focus();
     };
     button.onclick = execute;
-    input.onkeydown = e => e.key === 'Enter' && execute();
+    input.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); execute(); } };
+    input.focus();
 }
 
 export default initTerminal;
