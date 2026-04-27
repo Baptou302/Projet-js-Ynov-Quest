@@ -1,17 +1,20 @@
 #app {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 24px;
+    padding: 12px;
+    overflow: hidden;
 }
 
 .screen {
-    width: min(950px, 100%);
+    width: min(900px, 95%);
+    height: 95vh;
     background: #1f2937;
     border-radius: 18px;
-    padding: 28px;
+    padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+    overflow-y: auto;
 }
 
 .center {
@@ -43,14 +46,42 @@
 
 #app { position: relative; }
 
+#bg-decorations { display: none; position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+
+#app.theme-archives ~ #bg-decorations { display: block; }
+
+#app.theme-archives ~ #bg-decorations::before { content: ''; position: absolute; bottom: 20px; right: 20px; width: 200px; height: 200px; background: url('../../assets/backgrounds/archives-flag.png') no-repeat center; background-size: contain; opacity: 0.15; transform: rotate(-8deg); mix-blend-mode: lighten; }
+
+#app.theme-network ~ #bg-decorations { display: block; }
+
+#app.theme-network ~ #bg-decorations::before { content: 'CYBERSHIELD\APro\A\APrevention DDoS\AScan Réseau\AChiffrement'; position: fixed; left: 10px; top: 50%; transform: translateY(-50%); width: 180px; height: auto; background: linear-gradient(135deg, #1a3a50 0%, #0a2a40 100%); border: 2px solid #00ffff; border-radius: 10px; padding: 20px; color: #a0a0a0; font-size: 13px; white-space: pre-line; line-height: 1.6; text-align: center; font-weight: bold; box-shadow: 0 0 20px rgba(0,255,255,0.2); pointer-events: auto; }
+
+#app.theme-network ~ #bg-decorations::after { content: 'NETGUARD\AVPN Premium\A\A256-bit Crypto\AZéro Log\A99.9% Uptime'; position: fixed; right: 10px; top: 50%; transform: translateY(-50%); width: 180px; height: auto; background: linear-gradient(135deg, #1a3a50 0%, #0a2a40 100%); border: 2px solid #00ffff; border-radius: 10px; padding: 20px; color: #a0a0a0; font-size: 13px; white-space: pre-line; line-height: 1.6; text-align: center; font-weight: bold; box-shadow: 0 0 20px rgba(0,255,255,0.2); pointer-events: auto; }
+
+#app.theme-sql ~ #bg-decorations { display: block; }
+
+#app.theme-sql ~ #bg-decorations::before { content: 'OPTIMISEZ\AVOS REQUÊTES\A\AJusqu\'à 90% plus rapide\A\nDÉCOUVRIR'; position: fixed; left: 10px; top: 10px; width: 200px; height: 90vh; background: linear-gradient(135deg, #1a4d6d 0%, #0d2a3d 100%); border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); pointer-events: auto; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding: 30px 15px; color: white; font-weight: bold; text-align: center; white-space: pre-line; font-size: 15px; line-height: 1.4; }
+
+#app.theme-sql ~ #bg-decorations::after { content: 'SÉCURISEZ\AVOS DATA\A\AChiffrement E2E garanti\A\nEN SAVOIR +'; position: fixed; right: 10px; top: 10px; width: 200px; height: 90vh; background: linear-gradient(135deg, #2d1a4d 0%, #1a0d2a 100%); border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); pointer-events: auto; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding: 30px 15px; color: white; font-weight: bold; text-align: center; white-space: pre-line; font-size: 15px; line-height: 1.4; }
+
 @keyframes warp { 0% { clip-path: circle(0% at 50% 50%); } 45% { clip-path: circle(150% at 50% 50%); } 55% { clip-path: circle(150% at 50% 50%); } 100% { clip-path: circle(0% at 50% 50%); } }
 
 #warp-overlay { position: fixed; inset: 0; background: #000; display: none; animation: none; pointer-events: none; z-index: 999; }
 
 #warp-overlay.active { display: block; animation: warp 2s ease-in-out; }
 
-.theme-archives { background: linear-gradient(135deg, #1a4d2e 0%, #2d7a4a 100%); } .theme-archives .screen { background: #235a3a; color: #a0a0a0; } .theme-archives h1, .theme-archives h2, .theme-archives h3 { color: #a0a0a0; } .theme-archives .badge { background: #2a3a2a; color: #a0a0a0; } .theme-archives .btn { background: #4a6a4a; color: #e0e0e0; } .theme-archives .btn.secondary { background: #2a3a2a; color: #a0a0a0; } .theme-archives .btn:hover { background: #5a7a5a; } .theme-archives .card { background: #1a2a1a; color: #a0a0a0; } .theme-archives .input { background: #0d1a0d; border-color: #4a6a4a; color: #ffffff; pointer-events: auto; } .theme-archives .input::placeholder { color: #6a8a6a; } .theme-archives .option { background: #1a2a1a; color: #a0a0a0; } .theme-archives .option.picked { background: #4a6a4a; border-color: #6a8a6a; color: #fff; } .theme-archives .terminal-history { background: #0a1a10; color: #00ff00; }
+@media (max-width: 768px) { #app { padding: 12px; } .screen { padding: 16px; } .world-list, .level-list { gap: 12px; } }
 
-.theme-network { background: linear-gradient(135deg, #0a3d5c 0%, #1a5f8c 100%); } .theme-network .screen { background: #0d4a6f; color: #00ffff; } .theme-network h1, .theme-network h2, .theme-network h3 { color: #ffaa00; } .theme-network .btn { background: #ff9500; color: #000; } .theme-network .btn.secondary { background: #004d7a; color: #00ffff; } .theme-network .btn:hover { background: #ffbb33; } .theme-network .badge { background: #004d7a; } .theme-network .card { background: #062d46; color: #00ffff; } .theme-network .input { background: #041a28; border-color: #ff9500; color: #00ffff; } .theme-network .option { background: #004d7a; color: #00ffff; } .theme-network .option.picked { background: #ff9500; border-color: #ffaa00; color: #000; } .theme-network .terminal-history { background: #021116; color: #00ffff; }
+.theme-archives { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); background-attachment: fixed; position: relative; }
+
+.theme-archives::before { content: ''; position: absolute; bottom: 0; left: 0; width: 300px; height: 300px; background: url('../../assets/backgrounds/archives-folders.png') no-repeat center; background-size: contain; opacity: 0.25; pointer-events: none; z-index: 0; transform: rotate(-15deg); mix-blend-mode: screen; }
+
+.theme-archives::after { content: ''; position: absolute; top: 0; right: 0; width: 250px; height: 250px; background: url('../../assets/backgrounds/archives-terminal.png') no-repeat center; background-size: contain; opacity: 0.7; pointer-events: none; z-index: 0; transform: rotate(12deg); mix-blend-mode: screen; }
+
+@media (max-width: 768px) { .theme-archives::before, .theme-archives::after { width: 150px !important; height: 150px !important; opacity: 0.1 !important; } }
+
+.theme-archives .screen { background: #1a1a1a; color: #a0a0a0; position: relative; z-index: 2; } .theme-archives h1, .theme-archives h2, .theme-archives h3 { color: #a0a0a0; } .theme-archives .badge { background: #2a2a2a; color: #a0a0a0; } .theme-archives .btn { background: #4a6a4a; color: #e0e0e0; } .theme-archives .btn.secondary { background: #2a3a2a; color: #a0a0a0; } .theme-archives .btn:hover { background: #5a7a5a; } .theme-archives .card { background: #222222; color: #a0a0a0; } .theme-archives .input { background: #0d0d0d; border-color: #4a6a4a; color: #ffffff; pointer-events: auto; } .theme-archives .input::placeholder { color: #6a8a6a; } .theme-archives .option { background: #222222; color: #a0a0a0; } .theme-archives .option.picked { background: #4a6a4a; border-color: #6a8a6a; color: #fff; } .theme-archives .terminal-history { background: #0a0a0a; color: #00ff00; }
+
+.theme-network { background: linear-gradient(135deg, #0a3d5c 0%, #1a5f8c 100%); } .theme-network .screen { background: #1a1a1a; color: #a0a0a0; } .theme-network h1, .theme-network h2, .theme-network h3 { color: #a0a0a0; } .theme-network .btn { background: #3a3a3a; color: #e0e0e0; } .theme-network .btn.secondary { background: #2a2a2a; color: #a0a0a0; } .theme-network .btn:hover { background: #4a4a4a; } .theme-network .badge { background: #2a2a2a; color: #a0a0a0; } .theme-network .card { background: #222222; color: #a0a0a0; } .theme-network .input { background: #0d0d0d; border-color: #3a3a3a; color: #ffffff; } .theme-network .option { background: #2a2a2a; color: #a0a0a0; } .theme-network .option.picked { background: #3a3a3a; border-color: #5a5a5a; color: #fff; } .theme-network .terminal-history { background: #0a0a0a; color: #00ff00; }
 
 .theme-sql { background: linear-gradient(135deg, #4a1a5c 0%, #7a2a8c 100%); } .theme-sql .screen { background: #5f1a7a; color: #ff00ff; } .theme-sql h1, .theme-sql h2, .theme-sql h3 { color: #ff00ff; } .theme-sql .btn { background: #ff00ff; color: #000; } .theme-sql .btn.secondary { background: #3a0a4a; color: #ff00ff; } .theme-sql .btn:hover { background: #ff33ff; } .theme-sql .badge { background: #3a0a4a; } .theme-sql .card { background: #3d0d52; color: #ff00ff; } .theme-sql .input { background: #200028; border-color: #ff00ff; color: #ff00ff; } .theme-sql .option { background: #3a0a4a; color: #ff00ff; } .theme-sql .option.picked { background: #ff00ff; border-color: #ff00ff; color: #000; } .theme-sql .terminal-history { background: #1a0024; color: #ff00ff; }
