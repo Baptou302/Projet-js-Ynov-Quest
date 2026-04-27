@@ -3,18 +3,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12px;
+    padding: 24px;
     overflow: hidden;
 }
 
 .screen {
-    width: min(900px, 95%);
-    height: 95vh;
+    width: min(900px, 100%);
     background: #1f2937;
     border-radius: 18px;
-    padding: 20px;
+    padding: 28px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
-    overflow-y: auto;
 }
 
 .center {
@@ -39,9 +37,10 @@
 .world-list,
 .level-list {
     display: flex;
-    gap: 24px;
-    flex-wrap: wrap;
+    gap: 16px;
+    flex-wrap: nowrap;
     justify-content: center;
+    align-items: center;
 }
 
 #app { position: relative; }
