@@ -150,6 +150,50 @@ npm start
 
 Le serveur tourne sur `http://localhost:3000`. Ouvrir `index.html` dans un navigateur (ou via un serveur statique local).
 
+---
+
+## Comprendre les dépendances
+
+### Pourquoi `npm install` ?
+
+Quand tu récupères ce projet (ex: par `git clone`), seul `package.json` est inclus. Il contient la **liste** des dépendances nécessaires (Express, bcryptjs, MySQL2, etc.), mais pas les packages eux-mêmes.
+
+`npm install` télécharge tous les packages listés dans `package.json` et les place dans le dossier `node_modules/`.
+
+### Le dossier `node_modules/`
+
+- Contient tous les packages npm instalés et leurs dépendances
+- **Très lourd** (souvent 100+ MB) — **ne pas commit sur Git**
+- Généré automatiquement par `npm install`
+- Si tu le supprimes accidentellement, il suffit de relancer `npm install`
+
+### `package-lock.json`
+
+- **Verrouille les versions exactes** de tous les packages installés
+- Créé automatiquement par `npm install`
+- Assure que tout le monde utilise les mêmes versions (reproduction garantie)
+- **À commit sur Git** — c'est le "snapshot" de tes dépendances
+- Permet à quelqu'un d'autre de cloner le projet et d'avoir exactement the même environnement
+
+### `npm start` — Pourquoi ?
+
+`npm start` lance le serveur vérifie le `package.json` et exécute le script `start` (par défaut : `node server.js`).
+
+**À quoi ça sert :**
+- Lance **Express** écoute sur le port 3000
+- Démarre les routes `/login` et `/register`
+- Permet au frontend de communiquer avec la base de données
+
+**Sans `npm start`**, tu n'as qu'une page statique HTML — pas d'authentification, pas de sauvegarde de scores, rien !
+
+**Résumé**
+| Fichier/Dossier | Rôle |
+|---|---|
+| `package.json` | Liste des dépendances + script `start` |
+| `package-lock.json` | Versions exactes (reproducibilité) |
+| `node_modules/` | Les packages téléchargés (généré par `npm install`) |
+| `npm start` | Lance le serveur pour que l'app fonctionne |
+
 ## Auteurs
 
 Réalisé par Erwann Sueur, Baptiste Lecoq et théo Delourneau
